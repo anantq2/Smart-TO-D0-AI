@@ -1,57 +1,70 @@
-# 🧠 Smart Todo AI – README
+# 🧠 Smart Todo AI
 
-AI-powered task management that thinks ahead.
-Built with Django REST + Next.js + Supabase + OpenAI.
+AI-powered task management that thinks ahead.  
+Built with **Django REST + Next.js + Supabase + LM Studio / OpenAI**.
 
-📸 Screenshots
-Sign In / Sign Up page:
-![alt text](image.png)
-Dashboard showing task list with priority:
-![alt text](image-1.png)
-Task creation/edit form with AI suggestions
-![alt text](image-2.png)
-![alt text](image-3.png)
-Context input screen (messages, emails, notes)
-![alt text](image-4.png)
+---
 
-🚀 Features
-🔁 Full-stack todo manager with AI integration
+## 📸 Screenshots
 
-🧠 AI Suggestions:
+**Sign In / Sign Up page**  
+![Sign In](image.png)
 
-Task prioritization
+**Dashboard showing task list with priority**  
+![Dashboard](image-1.png)
 
-Deadline recommendations
+**Task creation/edit form with AI suggestions**  
+![Task Form](image-2.png)  
+![AI Suggestions](image-3.png)
 
-Context-based task enhancement
+**Context input screen (messages, emails, notes)**  
+![Context Input](image-4.png)
 
-Smart categorization (auto tags)
+---
 
-📥 Daily Context Analysis (Emails, Notes, WhatsApp-style input)
+## 🚀 Features
 
-🧱 Tech Stack
-Tech:
-Frontend    Next.js + Tailwind CSS
-Backend     Django REST Framework
-AI Module   OpenAI / LM Studio (Llama/Mistral)
-Database    Supabase (PostgreSQL)
-Storage     Supabase Storage
+- 🔁 Full-stack Todo manager with AI integration
+- 🧠 AI Suggestions:
+  - Task prioritization
+  - Deadline recommendations
+  - Context-based task enhancement
+  - Smart categorization (auto tags)
+- 📥 Daily context analysis (Emails, Notes, WhatsApp-style input)
 
-📂 Folder Structure
-/project
- ┣ backend/        # Django backend
- ┣ frontend/       # Next.js frontend
- ┃ ┣ app/
- ┃ ┣ components/
- ┃ ┣ hooks/
- ┃ ┣ lib/
- ┃ ┣ ...
- ┣ supabase/       # DB config, migrations
- ┣ README.md
+---
 
-⚙️ Setup Instructions
+## 🧱 Tech Stack
 
-🛠 Backend Setup (Django)
+| Layer     | Technology                          |
+|-----------|--------------------------------------|
+| Frontend  | Next.js + Tailwind CSS               |
+| Backend   | Django REST Framework                |
+| AI Module | OpenAI / LM Studio (LLaMA / Mistral) |
+| Database  | Supabase (PostgreSQL)                |
+| Storage   | Supabase Storage                     |
+
+---
+
+## 📂 Folder Structure
+
+/project  
+┣ backend/ # Django backend  
+┣ frontend/ # Next.js frontend  
+┃ ┣ app/  
+┃ ┣ components/  
+┃ ┣ hooks/  
+┃ ┣ lib/  
+┃ ┣ ...  
+┣ supabase/ # DB config, migrations  
+┗ README.md  
+
+
+---
+
+## ⚙️ Setup Instructions
+
+### 🛠 Backend Setup (Django)
 cd project/backend
 python -m venv env
 source env/bin/activate  # or env\Scripts\activate on Windows
@@ -65,7 +78,7 @@ npm install
 npm run dev
 
 🤖 AI Integration (LM Studio)
-This project uses LM Studio to run local LLMs (like LLaMA 2 Chat or Mistral) for:
+This project uses LM Studio to run local LLMs (like LLaMA 2 Chat, Mistral, etc.) for:
 
 Task analysis
 
@@ -75,38 +88,40 @@ Deadline prediction
 
 Smart tagging and enhanced descriptions
 
-LM Studio is configured as a drop-in replacement for OpenAI using this endpoint:
-LLM_API_URL=<http://192.168.xx.xx:1234/v1/chat/completions>
-✅ Prompt structure follows OpenAI-style messages (role + content)
-✅ Supports any chat model like llama-2-7b-chat, mistral-instruct, openchat, etc.
+LM Studio is used as a drop-in replacement for OpenAI, using this endpoint:  
+LLM_API_URL=http://192.168.xx.xx:1234/v1/chat/completions
 
-For best results, load the model via LM Studio desktop app and expose the local endpoint.
+✅ Uses OpenAI-style prompt format: messages[] with role + content  
+✅ Compatible models: llama-2-7b-chat, mistral-instruct, openchat, etc.
 
-📡 API Documentation:
-
+📡 API Documentation  
 GET APIs
-Endpoint    Description
-/api/tasks    Get all tasks
-/api/categories    Get task categories/tags
-/api/context    Get all daily context entries
+| Endpoint          | Description               |
+| ----------------- | ------------------------- |
+| `/api/tasks`      | Get all tasks             |
+| `/api/categories` | Get task categories/tags  |
+| `/api/context`    | Get daily context entries |
 
 POST APIs
-Endpoint    Description
-/api/tasks    Create new task
-/api/context    Add context entry (email/message)
-/api/ai/suggest    Get AI suggestions/prioritization
+
+| Endpoint          | Description                       |
+| ----------------- | --------------------------------- |
+| `/api/tasks`      | Create new task                   |
+| `/api/context`    | Add context entry (email/message) |
+| `/api/ai/suggest` | Get AI suggestions/prioritization |
 
 🧪 Sample Data
-Sample context entries in /supabase/sample_context.sql
+supabase/sample_context.sql — Sample context entries  
 
-Sample tasks for testing AI in /backend/smarttodo/tests/fixtures/
+backend/smarttodo/tests/fixtures/ — AI-ready task fixtures
+
 ✅ Requirements
-Include a file named requirements.txt in backend like:
+Make sure this is in your requirements.txt:
 Django==4.2.5
 djangorestframework
 
-🧑‍🎓 Author
-👨‍💻 Anant Kumar Jha
-🆔 B.Tech IT,2026
-📍 GGSIPU (Guru Gobind Singh Indraprastha University), Guru Tegh Bahadur Institute Of Technology
-📧 [jhasonu136@gmail.com](mailto:jhasonu136@gmail.com)
+👨‍🎓 Author  
+👨‍💻 Anant Kumar Jha  
+🆔 B.Tech IT, 2026  
+🏫 GGSIPU (GTBIT – Guru Tegh Bahadur Institute of Technology)  
+📧 jhasonu136@gmail.com  
